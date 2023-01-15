@@ -6,6 +6,7 @@ public class InstanceManager : MonoBehaviour
 {
 
     public GameObject _GUI_HEAL;
+    public GameObject VictoryUI;
 
     public static InstanceManager instance;
 
@@ -16,7 +17,7 @@ public class InstanceManager : MonoBehaviour
             Debug.LogWarning("Il y a plus d'une instance de PlayerManager dans la scène");
         }
         instance = this;
-        _GUI_HEAL = gameObject.transform.GetChild(0).gameObject;
+        
     }
     
 }

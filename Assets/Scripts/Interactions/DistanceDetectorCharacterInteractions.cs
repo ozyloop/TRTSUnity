@@ -23,6 +23,7 @@ public class DistanceDetectorCharacterInteractions : MonoBehaviour
                 sentenceNb=0;
                 TriggerDialogue();
                 interacted=  true;
+                GUIInteract.instance.gameObject.SetActive(false);
            
             
         }
@@ -30,10 +31,12 @@ public class DistanceDetectorCharacterInteractions : MonoBehaviour
         {
             interacted = false;
             mainPlayer.instance.GetComponent<CharController_Motor>().enabled = true;
+            GUIInteract.instance.gameObject.SetActive(true);
         }
         else if(interacted && Input.GetMouseButtonDown(0))
         {
             sentenceNb++;
+            
             Debug.Log("test next sentence");
             DialogueManager.instance.DisplayNextSentence();
         }

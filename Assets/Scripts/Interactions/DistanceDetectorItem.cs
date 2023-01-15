@@ -5,6 +5,7 @@ using UnityEngine;
 public class DistanceDetectorItem : MonoBehaviour
 {
    public int distance;
+   public bool toDestroy;
    
    void Start()
    {

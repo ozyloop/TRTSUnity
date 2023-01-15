@@ -3,13 +3,28 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad;
+    
+    public GameObject mainMenuUI;
+    public GameObject gameOverUI;
+    public Animator fadeSystem;
 
     public GameObject settingsWindow;
     // Start is called before the first frame update
-    public void StartGame()
+    public void StartGame(string levelToLoad)
     {
+        //fadeSystem.SetTrigger("FadeIn");
+        settingsWindow.transform.GetChild(7).gameObject.SetActive(true);
         SceneManager.LoadScene(levelToLoad);
+        
+        gameOverUI.SetActive(false);
+        mainMenuUI.SetActive(false);
+        
+        
+            fadeSystem.SetTrigger("FadeOut");
+
+            InstanceHealthBar.instance.gameObject.SetActive(true);
+        
+        
     }
 
     public void SettingsButton()
@@ -26,4 +41,7 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    
+
 }
